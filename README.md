@@ -3,15 +3,21 @@
 ## Überblick
 Die Polleninformation.at Integration für Home Assistant ermöglicht es Benutzern, Pollenbelastungen und Allergierisiken in Österreich zu überwachen. Sie stellt Sensordaten für verschiedene Pollenarten und eine Gesamtbewertung des Allergierisikos bereit.
 
-## Konfiguration
+## Installation & Konfiguration
+
+Zum installieren wie folgt vorgehen:
+
+1. Den Ordner *polleninformation_at* samt Inhalt im Ordner *custom_components* einfügen
+2. In ha unter Einstellungen/Geräte und Integrationen die Integration *Polleninformation.at* suchen und hinzufügen
+
 Die Integration wird über das UI von Home Assistant eingerichtet. Benutzer können Folgendes konfigurieren:
 
-1. API-URL (ein Standardwert wird bereitgestellt)
+1. API-URL
    Die GPS Koordinaten müssen im link noch für den passenden Standort geändert werden. Hier ein Beispiel für Klagenfurt:
 
    https://www.polleninformation.at/index.php?eID=appinterface&pure_json=1&lang_code=de&lang_id=0&action=getFullContaminationData&type=gps&value[latitude]=46.628&value[longitude]=14.309&show_polls=23&country_id=1&personal_contamination=false&sensitivity=0&country=AT&sessionid=
 
-3. Zu aktivierende Sensoren (Benutzer können aus einer Liste verfügbarer Sensortypen auswählen)
+2. Zu aktivierende Sensoren (Benutzer können aus einer Liste verfügbarer Sensortypen auswählen)
 
 ## Verfügbare Sensoren
 Die Integration bietet Sensoren für verschiedene Pollenarten, darunter:
