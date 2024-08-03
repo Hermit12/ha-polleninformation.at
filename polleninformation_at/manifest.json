@@ -1,0 +1,16 @@
+{
+    "domain": "polleninformation_at",
+    "name": "Polleninformation.at",
+    "config_flow": true,
+    "documentation": "https://www.example.com",
+    "requirements": ["aiohttp"],
+    "ssdp": [],
+    "zeroconf": [],
+    "homekit": {},
+    "dependencies": [],
+    "codeowners": [],
+    "iot_class": "cloud_polling",
+    "version": "0.3.0",
+    "icon": "mdi:flower-pollen",
+    "integration_type": "device"
+}
