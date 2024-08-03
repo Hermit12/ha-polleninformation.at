@@ -4,10 +4,14 @@
 Die Polleninformation.at Integration für Home Assistant ermöglicht es Benutzern, Pollenbelastungen und Allergierisiken in Österreich zu überwachen. Sie stellt Sensordaten für verschiedene Pollenarten und eine Gesamtbewertung des Allergierisikos bereit.
 
 ## Konfiguration
-Die Integration wird über das Config-Flow-System von Home Assistant eingerichtet. Benutzer können Folgendes konfigurieren:
+Die Integration wird über das UI von Home Assistant eingerichtet. Benutzer können Folgendes konfigurieren:
 
 1. API-URL (ein Standardwert wird bereitgestellt)
-2. Zu aktivierende Sensoren (Benutzer können aus einer Liste verfügbarer Sensortypen auswählen)
+   Die GPS Koordinaten müssen im link noch für den passenden Standort geändert werden. Hier ein Beispiel für Klagenfurt:
+
+   https://www.polleninformation.at/index.php?eID=appinterface&pure_json=1&lang_code=de&lang_id=0&action=getFullContaminationData&type=gps&value[latitude]=46.628&value[longitude]=14.309&show_polls=23&country_id=1&personal_contamination=false&sensitivity=0&country=AT&sessionid=
+
+3. Zu aktivierende Sensoren (Benutzer können aus einer Liste verfügbarer Sensortypen auswählen)
 
 ## Verfügbare Sensoren
 Die Integration bietet Sensoren für verschiedene Pollenarten, darunter:
@@ -36,22 +40,7 @@ Die bereitgestellte YAML-Konfiguration erstellt eine benutzerdefinierte Lovelace
 3. Eine Gesamtanzeige für das Allergierisiko wird mit Werten von 0 bis 4 dargestellt.
 4. Eine Markdown-Karte zeigt eine tägliche Pollennachricht an.
 
-## Verwendung
-Nach der Konfiguration erstellt die Integration Sensoren für jede ausgewählte Pollenart. Diese Sensoren können in Automatisierungen, Skripten oder auf der Lovelace-Benutzeroberfläche verwendet werden.
-
-Die bereitgestellte Lovelace-Konfiguration bietet eine übersichtliche, informative Anzeige, die nur relevante (aktive) Pollenarten anzeigt. Dies ermöglicht es Benutzern, aktuelle Allergierisiken schnell einzuschätzen.
-
-## Vorteile
-- Bietet lokalisierte Polleninformationen für Österreich
-- Anpassbare Sensorauswahl
-- Dynamische Benutzeroberfläche, die nur relevante Informationen anzeigt
-- Enthält eine Gesamtbewertung des Allergierisikos
-- Bietet eine tägliche Pollennachricht für zusätzlichen Kontext
-
-Diese Integration ist besonders nützlich für Allergiker in Österreich, da sie es ihnen ermöglicht, Pollenbelastungen zu überwachen und basierend auf Echtzeitdaten notwendige Vorsichtsmaßnahmen zu treffen.
-
-
-Beispiel Code für die Love Lace Oberfläche:
+Hier ein Beispiel der Lovelace Karte:
 
 ```
 type: vertical-stack
@@ -202,3 +191,4 @@ cards:
 
       {{ state_attr('sensor.tagliche_pollennachricht', 'message') }}
 ```
+
